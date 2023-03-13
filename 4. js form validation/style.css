@@ -1,0 +1,44 @@
+.container{
+    width: 300px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 0 auto 0 auto;;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.iField {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.error {
+    height: 13px;
+    color: red;
+    font-size: smaller;
+}
+
+input, textarea{
+    padding: 5px;
+    margin-top: 3px;
+    outline: none;
+    border: 1px solid black;
+}
+
+#checkboxId{
+    display: inline-block;
+    border: 1px solid black;
+    background-color: yellow;
+}
+
+#submitId {
+    width: 100%;
+    padding: 5px 0;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}

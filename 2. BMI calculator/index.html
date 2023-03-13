@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/90253a86bd.js" crossorigin="anonymous"></script>
+    <title>BMI calculator</title>
+</head>
+<body>
+    <!-- <h1>check if 
+        you are healthy or not</h1> -->
+    <h1>BMI calculator</h1>
+    <div class="wrapper">
+        <div class="field">
+            <p>Height in cm : </p>
+            <input type="text" id="height">
+            <span id="height_error"></span>
+        </div>
+
+        <div class="field">
+            <p>Weight in kg : </p>
+            <input type="text" id="weight">
+            <span id="weight_error"></span>
+        </div>
+
+        <button onclick="calculate()">Check</button>
+        <span id="result"></span>
+    </div>
+</body>
+</html>

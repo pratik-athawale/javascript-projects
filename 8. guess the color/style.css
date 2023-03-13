@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    background-color: rgb(36, 30, 30);
+}
+
+#heading {
+    background-color: blueviolet;
+    text-align: center;
+}
+#heading h2 {
+    margin: 0;
+    padding: 10px;
+    color: greenyellow;
+}
+#heading h1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 40px;
+    /* color: greenyellow; */
+}
+
+p{
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+    background-color: steelblue;
+}
+
+#messageId {
+    display: inline-block;
+    color: white;
+    width: 45%;
+    max-width: 250px;
+}
+
+#chancesId {
+    color: white;
+}
+
+#colors {
+    /* border: 1px solid rebeccapurple; */
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+.colorBox {
+    /* width: 12vw; */
+    width: 25vw;
+    height: 25vw;
+    max-width: 140px;
+    max-height: 140px;
+    background-color: rgb(159, 159, 219);
+    margin: 10px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 400px){
+    .colorBox{
+        margin: 5px;
+    }
+    #messageId {
+        width: 30%;
+    }
+    #heading h1 {
+        font-size: 35px;
+    }
+    #heading h2 {
+        font-size: 20px;
+    }
+}

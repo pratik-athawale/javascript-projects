@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Calculator</title>
+</head>
+<body>
+    
+    <h1>My Calculator</h1>
+    
+    <div id="container">
+        <input type="text" value="" id="bar" size="11">
+        <table id="tbl">
+            <tr>
+                <td><input type="button" value="C" id="clearB" onclick="clearBar()"></td>
+                <td><input type="button" value="<" id="clearB" onclick="delete1()"></td>
+                <td><input type="button" value="A" id="clearB" onclick="getPrev()"></td>
+                <td><input type="button" value="/" id="clearB" onclick="num('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="num('1')"></td>
+                <td><input type="button" value="2" onclick="num('2')"></td>
+                <td><input type="button" value="3" onclick="num('3')"></td>
+                <td><input type="button" value="-" onclick="num('-')"></td>
+            </tr>
+            <tr>
+            <tr>
+                <td><input type="button" value="4" onclick="num('4')"></td>
+                <td><input type="button" value="5" onclick="num('5')"></td>
+                <td><input type="button" value="6" onclick="num('6')"></td>
+                <td><input type="button" value="+" onclick="num('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="num('7')"></td>
+                <td><input type="button" value="8" onclick="num('8')"></td>
+                <td><input type="button" value="9" onclick="num('9')"></td>
+                <td><input type="button" value="*" onclick="num('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="num('.')"></td>
+                <td><input type="button" value="0" onclick="num('0')"></td>
+                <td colspan="2"><input type="button" value="=" onclick="getAns()"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- <input type="button" value=""> -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+.container{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid red;
+    align-items: center;
+    margin: 15vh auto 0 auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+h1, p{
+    margin: 0;
+}
+h1 {
+    font-size: 40px;
+}
+p {
+    font-size: x-large;
+}
+
+.btn-wrapper {
+    /* border: 1px solid black; */
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: medium;
+    border: none;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+button:disabled {
+    background-color: rgb(164, 164, 211);
+    cursor: not-allowed;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS form validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registration</h2>
+        <form action="/" name="myform" onsubmit="return validateInputs()" method="post">
+            <div class="iField">
+                <label for="uname">Username</label>
+                <input type="text" name="uname" id="unameId">
+                <span class="error"></span>
+            </div>
+            <div class="iField">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="emailId">
+                <span class="error"></span>
+            </div>
+            <div class="iField">
+                <label for="phone">Mobile No</label>
+                <input type="tel" name="phone" id="phoneId">
+                <span class="error"></span>
+            </div>
+            <div class="iField">
+                <label>Select gender</label>
+                <div>
+                    <input type="radio" name="male" id="maleId">
+                    <label for="male">male</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="female" id="femaleId">
+                    <label for="female">female</label>
+                </div>
+                <span class="error"></span>
+            </div>
+            <div class="iField">
+                <label for="adr">Address</label>
+                <textarea name="adr" id="adrId" cols="30" rows="5"></textarea>
+                <span class="error"></span>
+            </div>
+
+            <div class="iField">
+                <label for="pwd">Password</label>
+                <input type="password" name="pwd" id="pwdId">
+                <span class="error"></span>
+            </div>
+
+            <div class="iField">
+                <label for="cpwd">Confirm Password</label>
+                <input type="password" name="cpwd" id="cpwdId">
+                <span class="error"></span>
+            </div>
+
+            <div class="iField">
+                <div>
+                    <input type="checkbox" name="checkbox" id="checkboxId">
+                    <label for="adr">I agree terms and conditions</label><br>
+                    <span style="display: block;" class="error"></span>
+                </div>
+            </div>
+
+            <button id="submitId" type="submit">Sign Up</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

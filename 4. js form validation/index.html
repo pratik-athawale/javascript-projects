@@ -4,70 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS form validation</title>
+    <title>JS validation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>Registration</h2>
-        <form action="/" name="myform" onsubmit="return validateInputs()" method="post">
-            <div class="iField">
-                <label for="uname">Username</label>
-                <input type="text" name="uname" id="unameId">
-                <span class="error"></span>
-            </div>
-            <div class="iField">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="emailId">
-                <span class="error"></span>
-            </div>
-            <div class="iField">
-                <label for="phone">Mobile No</label>
-                <input type="tel" name="phone" id="phoneId">
-                <span class="error"></span>
-            </div>
-            <div class="iField">
-                <label>Select gender</label>
-                <div>
-                    <input type="radio" name="male" id="maleId">
-                    <label for="male">male</label>
-                </div>
+        <!-- <form action="/" onsubmit="return validateInputs()" method="POST"> -->
 
-                <div>
-                    <input type="radio" name="female" id="femaleId">
-                    <label for="female">female</label>
+            <h1>Registration</h1>
+
+            <div class="io" id="uname">
+                <label for="uname">Username</label>
+                <div class="iField">
+                    <input type="text" name="uname" class="boxInput">
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
                 </div>
+                <span></span>
+            </div>
+        
+            <div class="io" id="email">
+                <label for="email">Email</label>
+                <div class="iField">
+                    <input type="email" name="uname" class="boxInput">
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
+                </div>
+                <span></span>
+            </div>
+
+            <div class="io" id="mobile">
+                <label for="mobile">Mobile No</label>
+                <div class="iField">
+                    <input type="tel" name="phone" id="phoneId" class="boxInput">
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
+                </div>
+                <span></span>
+            </div>
+
+            <div class="io" id="gender">
+                <div class="iField">
+                    <label>Select gender</label>
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
+                </div>
+                <input type="radio" id="male">
+                <label for="male">male</label>
+                <input type="radio" id="female">
+                <label for="female">female</label>
                 <span class="error"></span>
             </div>
-            <div class="iField">
-                <label for="adr">Address</label>
+
+            <div class="io" id="age">
+                <div class="iField">
+                    <label for="uname">Enter Age</label>
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
+                </div>
+                <input type="number" class="boxInput">
+                <span></span>
+            </div>
+
+            <div class="io" id="birth">
+                <div class="iField">
+                    <label for="uname">Enter Date of Birth</label>
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
+                </div>
+                <input type="date" class="boxInput">
+                <span></span>
+            </div>
+
+            <div class="io" id="adr">
+                <div class="iField">
+                    <label for="adr">Address</label>
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
+                </div>
                 <textarea name="adr" id="adrId" cols="30" rows="5"></textarea>
                 <span class="error"></span>
             </div>
 
-            <div class="iField">
-                <label for="pwd">Password</label>
-                <input type="password" name="pwd" id="pwdId">
-                <span class="error"></span>
-            </div>
-
-            <div class="iField">
-                <label for="cpwd">Confirm Password</label>
-                <input type="password" name="cpwd" id="cpwdId">
-                <span class="error"></span>
-            </div>
-
-            <div class="iField">
-                <div>
-                    <input type="checkbox" name="checkbox" id="checkboxId">
-                    <label for="adr">I agree terms and conditions</label><br>
-                    <span style="display: block;" class="error"></span>
+            <div class="io" id="password">
+                <label for="uname">Password</label>
+                <div class="iField">
+                    <input type="text" name="uname" class="boxInput">
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
                 </div>
+                <span></span>
             </div>
 
-            <button id="submitId" type="submit">Sign Up</button>
-        </form>
+            <div class="io" id="cpassword">
+                <label for="uname">Confirm Password</label>
+                <div class="iField">
+                    <input type="text" name="uname" class="boxInput">
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
+                </div>
+                <span></span>
+            </div>
+
+            <div class="io" id="agree">
+                <div class="iField">
+                    <input type="checkbox" id="agree1">
+                    <label for="agree1">I agree terms and conditions</label>
+                    <img src="success.png" class="valid" alt="success">
+                    <img src="wrong.jpg" class="invalid" alt="wrong">
+                </div>
+                <span></span>
+            </div>
+
+            <!-- <button id="submitId" type="submit">Sign Up</button> -->
+            <input type="submit" onclick="validateInputs()">
+        <!-- </form> -->
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Quick Maths</h1>
+
+        <h3 id="score" >Score</h3>
+
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+        
+            <button onclick="clickBtn(1)">1</button>
+            <button onclick="clickBtn(2)">2</button>
+            <button onclick="clickBtn(3)">3</button>
+            <button class="operator" onclick="setOperation('/')" id="division">/</button>
+        
+            <button onclick="clickBtn(4)">4</button>
+            <button onclick="clickBtn(5)">5</button>
+            <button onclick="clickBtn(6)">6</button>
+            <button class="operator" onclick="setOperation('*')" id="multiplication">*</button>
+        
+            <button onclick="clickBtn(7)">7</button>
+            <button onclick="clickBtn(8)">8</button>
+            <button onclick="clickBtn(9)">9</button>
+            <button class="operator" onclick="setOperation('-')" id="subtraction">-</button>
+        
+            <button  onclick="clickBtn(0)" class="double">0</button>
+            <button>.</button>
+            <button class="operator" onclick="setOperation('+')" id="addition">+</button>
+            <button class="operator" onclick="showAgain()">Again</button>
+            <button class="operator" onclick="backSpace()">Back</button>
+            <button class="operator" onclick="startQuiz()" id="startBtn">Start</button>
+            <button class="operator" onclick="checkAnswer()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

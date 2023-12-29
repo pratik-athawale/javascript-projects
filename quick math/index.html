@@ -15,27 +15,30 @@
         <div class="calculator">
             <input type="text" id="display" disabled>
         
+
+            <button class="operator" onclick="showAgain()">Again</button>
+            <button class="operator" onclick="startQuiz()" id="startBtn">Start</button>
+            <button class="operator" onclick="clearDisplay()">Clear</button>
+            <button>.</button>
+
+            <button class="operator" onclick="setOperation('/')" id="division">/</button>
             <button onclick="clickBtn(1)">1</button>
             <button onclick="clickBtn(2)">2</button>
             <button onclick="clickBtn(3)">3</button>
-            <button class="operator" onclick="setOperation('/')" id="division">/</button>
         
+            <button class="operator" onclick="setOperation('*')" id="multiplication">*</button>
             <button onclick="clickBtn(4)">4</button>
             <button onclick="clickBtn(5)">5</button>
             <button onclick="clickBtn(6)">6</button>
-            <button class="operator" onclick="setOperation('*')" id="multiplication">*</button>
         
+            <button class="operator" onclick="setOperation('-')" id="subtraction">-</button>
             <button onclick="clickBtn(7)">7</button>
             <button onclick="clickBtn(8)">8</button>
             <button onclick="clickBtn(9)">9</button>
-            <button class="operator" onclick="setOperation('-')" id="subtraction">-</button>
         
-            <button  onclick="clickBtn(0)" class="double">0</button>
-            <button>.</button>
             <button class="operator" onclick="setOperation('+')" id="addition">+</button>
-            <button class="operator" onclick="showAgain()">Again</button>
             <button class="operator" onclick="backSpace()">Back</button>
-            <button class="operator" onclick="startQuiz()" id="startBtn">Start</button>
+            <button  onclick="clickBtn(0)">0</button>
             <button class="operator" onclick="checkAnswer()">OK</button>
         </div>
     </div>

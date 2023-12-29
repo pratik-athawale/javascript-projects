@@ -32,6 +32,7 @@ h3, h1 {
     outline: none;
     border-radius: 4px;
     color: white;
+    background-color: grey;
 }
 
 .calculator button {

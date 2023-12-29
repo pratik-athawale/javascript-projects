@@ -1,7 +1,7 @@
 let num1 = 0;
 let num2 = 0;
 let questions = 0;
-const maxQuestions = 10;
+const maxQuestions = 3;
 let startTime = 0;
 let endTime = 0;
 let quizRunning = false;
@@ -19,6 +19,10 @@ let operators = [division, multiplication, subtraction, addition];
 function clickBtn(x) {
     display.value = display.value + x;
     console.log(x);
+}
+
+function clearDisplay() {
+    display.value = '';
 }
 
 function setNumbers() {

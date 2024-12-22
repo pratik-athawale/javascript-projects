@@ -6,13 +6,16 @@ let startTime = 0;
 let endTime = 0;
 let quizRunning = false;
 let operation = '+';
+let operand1 = [1, 9];
+let operand2 = [1, 9];
 const display = document.getElementById('display');
 const startBtn = document.getElementById('startBtn');
+const checkAnswerBtn = document.getElementById('checkAnswer');
 const score = document.getElementById('score');
-const division = document.getElementById('division');
-const multiplication = document.getElementById('multiplication');
-const subtraction = document.getElementById('subtraction');
-const addition = document.getElementById('addition');
+const division = document.getElementById('div');
+const multiplication = document.getElementById('mult');
+const subtraction = document.getElementById('sub');
+const addition = document.getElementById('add');
 let operators = [division, multiplication, subtraction, addition];
 
 
@@ -25,14 +28,13 @@ function clearDisplay() {
     display.value = '';
 }
 
+function getRandomNumberInclusiveBoth(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
 function setNumbers() {
-    num1 = Math.floor(Math.random() * 99) + 1;
-    if (operation == '*' || operation == '/') {
-        num2 = Math.floor(Math.random() * (9 - 2 + 1)) + 2;
-    }
-    else {
-        num2 = Math.floor(Math.random() * 99) + 1;
-    }
+    num1 = getRandomNumberInclusiveBoth(operand1[0], operand1[1]);
+    num2 = getRandomNumberInclusiveBoth(operand2[0], operand2[1]);
     // display.value = num1 + " + " + num2;
     console.log(num1 + " " + num2);
     display.value = `${num1} ${operation} ${num2}`;
@@ -69,17 +71,24 @@ function getExpectedAnswer() {
         return num1 * num2;
     }
     else {  // (operation == '/')
-        return (num1 / num2).toFixed(2);
+        return (num1 / num2).toFixed(1);
     }
 }
+
+function areEqualUpToFirstDecimal(str1, str2) {
+    const truncatedStr1 = str1.indexOf('.') === -1 ? str1+'.0' : str1.substring(0, str1.indexOf('.') + 2);
+    const truncatedStr2 = str2.indexOf('.') === -1 ? str2+'.0' : str2.substring(0, str2.indexOf('.') + 2);
+  
+    return truncatedStr1 === truncatedStr2;
+  }
 
 function checkAnswer() {
     if (quizRunning) {
         // console.log(display.value);
         // console.log(typeof display.value);
-        let answer = parseInt(display.value);
+        let answer = display.value;
         let expectedAnswer = getExpectedAnswer();
-        if (answer == expectedAnswer) {
+        if (areEqualUpToFirstDecimal(answer, expectedAnswer.toString())) {
             display.style.border = 'none';
             if (questions < maxQuestions) {
                 setNumbers();
@@ -92,6 +101,9 @@ function checkAnswer() {
             display.style.border = '1px solid red';
             display.value = '';
         }
+    }
+    else {
+        display.value = eval(display.value);
     }
 }
 
@@ -156,6 +168,43 @@ function startQuiz() {
         resetQuiz();
     }
 }
+
+function setOperands(range1, range2) {
+    operand1 = range1;
+    operand2 = range2;
+    console.log(operand1);
+    console.log(operand2);
+}
+
+function setEventsForToggle(toggleIndex, op1Range, op2Range) {
+    const toggle1 = document.getElementById("range1");
+    const toggle2 = document.getElementById("range2");
+    const toggle3 = document.getElementById("range3");
+    const toggle4 = document.getElementById("range4");
+    const toggleIds = [toggle1, toggle2, toggle3, toggle4];
+    console.log('added event for', toggleIndex);   
+    
+    toggleIds[toggleIndex].addEventListener('click', function() {
+        
+      toggle1.className = "fa-solid fa-toggle-off";
+      toggle2.className = "fa-solid fa-toggle-off";
+      toggle3.className = "fa-solid fa-toggle-off";
+      toggle4.className = "fa-solid fa-toggle-off";
+      
+      toggleIds[toggleIndex].className = "fa-solid fa-toggle-on";
+
+      setOperands(op1Range, op2Range);
+      console.log(operand1);
+      console.log(operand2);
+      
+    });
+}
+setEventsForToggle(0, [1, 9], [1, 9]);
+setEventsForToggle(1, [1, 90], [1, 9]);
+setEventsForToggle(2, [1, 99], [1, 99]);
+setEventsForToggle(3, [1, 20], [1, 9]);
+document.getElementById("range1").click();
+
 
 setOperation('+');
 

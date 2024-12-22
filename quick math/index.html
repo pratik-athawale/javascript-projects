@@ -9,7 +9,10 @@
 </head>
 <body>
     <div class="main">
-        <h1>Quick Maths</h1>
+        <h1 id="app-title">
+            Quick Maths
+            <i class="fa-solid fa-gear" ></i>
+        </h1>
 
         <h3 id="score" >Score</h3>
 
@@ -20,57 +23,75 @@
             <button class="operator" onclick="showAgain()">Again</button>
             <button class="operator" onclick="startQuiz()" id="startBtn">Start</button>
             <button class="operator" onclick="clearDisplay()">Clear</button>
-            <button class="operator" onclick="backSpace()">Back</button>
+            <button class="operator" onclick="backSpace()">
+                <i class="fa-solid fa-delete-left"></i>
+            </button>
 
-            <button class="operator" onclick="setOperation('/')" id="division">/</button>
+            <button class="operator" onclick="clickBtn('/')" id="division">/</button>
             <button onclick="clickBtn(1)">1</button>
             <button onclick="clickBtn(2)">2</button>
             <button onclick="clickBtn(3)">3</button>
         
-            <button class="operator" onclick="setOperation('*')" id="multiplication">*</button>
+            <button class="operator" onclick="clickBtn('*')" id="multiplication">*</button>
             <button onclick="clickBtn(4)">4</button>
             <button onclick="clickBtn(5)">5</button>
             <button onclick="clickBtn(6)">6</button>
         
-            <button class="operator" onclick="setOperation('-')" id="subtraction">-</button>
+            <button class="operator" onclick="clickBtn('-')" id="subtraction">-</button>
             <button onclick="clickBtn(7)">7</button>
             <button onclick="clickBtn(8)">8</button>
             <button onclick="clickBtn(9)">9</button>
         
-            <button class="operator" onclick="setOperation('+')" id="addition">+</button>
-            <button>.</button>
+            <button class="operator" onclick="clickBtn('+')" id="addition">+</button>
+            <button onclick="clickBtn('.')">.</button>
             <button  onclick="clickBtn(0)">0</button>
-            <button class="operator" onclick="checkAnswer()">OK</button>
+            <button class="operator" onclick="checkAnswer()" id="checkAnswer">OK</button>
         </div>
 
         <div class="settings">
             <div class="operations">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
+                <button id="add" onclick="setOperation('+')" >+</button>
+                <button id="sub" onclick="setOperation('-')" >-</button>
+                <button id="mult" onclick="setOperation('*')" >*</button>
+                <button id="div" onclick="setOperation('/')" >/</button>
             </div>
     
             <div class="classics">
                 <div class="opr-row">
                     <button class="range">1-9</button>
                     <button class="range">1-9</button>
-                    <i class="fa-solid fa-toggle-off"></i>
+                    <i 
+                        class="fa-solid fa-toggle-off" 
+                        id="range1"
+                    >
+                    </i>
                 </div>
                 <div class="opr-row">
                     <button class="range">1-90</button>
                     <button class="range">1-9</button>
-                    <i class="fa-solid fa-toggle-off"></i>
+                    <i 
+                        class="fa-solid fa-toggle-off" 
+                        id="range2"
+                    >
+                    </i>
                 </div>
                 <div class="opr-row">
                     <button class="range">1-99</button>
                     <button class="range">1-99</button>
-                    <i class="fa-solid fa-toggle-off"></i>
+                    <i 
+                        class="fa-solid fa-toggle-off" 
+                        id="range3"
+                    >
+                    </i>
                 </div>
                 <div class="opr-row">
                     <button class="range">1-20</button>
                     <button class="range">1-9</button>
-                    <i class="fa-solid fa-toggle-off"></i>
+                    <i 
+                        class="fa-solid fa-toggle-off" 
+                        id="range4"
+                    >
+                    </i>
                 </div>
             </div>
     

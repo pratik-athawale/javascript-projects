@@ -12,17 +12,14 @@ h3, h1 {
     padding: 15px;
 }
 
-.app-title {
-    text-align: center;
-    border: none;
-    background-color: blue;
+#settings-icon {
+    margin-left: 10px;
 }
 
 .calculator {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
-    max-width: 500px;
     padding: 16px;
     background-color: rgb(55, 53, 53);
     border-radius: 8px;
@@ -61,8 +58,6 @@ h3, h1 {
 }
 
 .main {
-    /* border: 5px solid red; */
-    max-width: 500px;
     background-color: rgb(55, 53, 53);
     color: white;
     margin: auto;
@@ -73,10 +68,10 @@ h3, h1 {
 }
 
 .settings {
-    width: 100%;
-    /* border: 1px solid black; */
+    min-width: 350px;
     padding: 16px;
     box-sizing: border-box;
+    display: none;
 }
 
 .operations, .opr-row, .customs {

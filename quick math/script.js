@@ -17,6 +17,12 @@ const multiplication = document.getElementById('mult');
 const subtraction = document.getElementById('sub');
 const addition = document.getElementById('add');
 let operators = [division, multiplication, subtraction, addition];
+const toggle1 = document.getElementById("range1");
+const toggle2 = document.getElementById("range2");
+const toggle3 = document.getElementById("range3");
+const toggle4 = document.getElementById("range4");
+const toggle5 = document.getElementById("range5");
+const toggleIds = [toggle1, toggle2, toggle3, toggle4, toggle5];
 
 
 function clickBtn(x) {
@@ -169,6 +175,23 @@ function startQuiz() {
     }
 }
 
+function toggleSettingsPage() {
+    const calculator = document.getElementsByClassName("calculator")[0];
+    const settings = document.getElementsByClassName("settings")[0];
+
+    console.log(settings.style.display);
+    
+
+    if (calculator.style.display == 'grid' || calculator.style.display == '') {
+        settings.style.display = 'block';
+        calculator.style.display = 'none';
+    }
+    else {
+        settings.style.display = 'none';
+        calculator.style.display = 'grid';
+    }
+}
+
 function setOperands(range1, range2) {
     operand1 = range1;
     operand2 = range2;
@@ -176,22 +199,18 @@ function setOperands(range1, range2) {
     console.log(operand2);
 }
 
+function setToggle(toggleIndex) {
+    toggleIds.forEach(toggleElement => {
+        toggleElement.className = "fa-solid fa-toggle-off";
+    });
+    toggleIds[toggleIndex].className = "fa-solid fa-toggle-on";
+}
+
 function setEventsForToggle(toggleIndex, op1Range, op2Range) {
-    const toggle1 = document.getElementById("range1");
-    const toggle2 = document.getElementById("range2");
-    const toggle3 = document.getElementById("range3");
-    const toggle4 = document.getElementById("range4");
-    const toggleIds = [toggle1, toggle2, toggle3, toggle4];
-    console.log('added event for', toggleIndex);   
-    
+
     toggleIds[toggleIndex].addEventListener('click', function() {
-        
-      toggle1.className = "fa-solid fa-toggle-off";
-      toggle2.className = "fa-solid fa-toggle-off";
-      toggle3.className = "fa-solid fa-toggle-off";
-      toggle4.className = "fa-solid fa-toggle-off";
-      
-      toggleIds[toggleIndex].className = "fa-solid fa-toggle-on";
+    
+      setToggle(toggleIndex);
 
       setOperands(op1Range, op2Range);
       console.log(operand1);
@@ -199,12 +218,25 @@ function setEventsForToggle(toggleIndex, op1Range, op2Range) {
       
     });
 }
+
+function setCustomRangeForOperands() {
+    const str1 = document.getElementById("customOp1Range").value;
+    const str2 = document.getElementById("customOp2Range").value;
+
+    const op1Range = str1.split(',').map(Number);
+    const op2Range = str2.split(',').map(Number);
+
+    if (op1Range.length == 2 && op2Range.length == 2) {
+        setToggle(4);
+        setOperands(op1Range, op2Range);        
+    }
+}
+
 setEventsForToggle(0, [1, 9], [1, 9]);
 setEventsForToggle(1, [1, 90], [1, 9]);
 setEventsForToggle(2, [1, 99], [1, 99]);
 setEventsForToggle(3, [1, 20], [1, 9]);
 document.getElementById("range1").click();
-
 
 setOperation('+');
 

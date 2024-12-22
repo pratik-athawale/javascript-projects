@@ -9,9 +9,13 @@
 </head>
 <body>
     <div class="main">
-        <h1 id="app-title">
-            Quick Maths
-            <i class="fa-solid fa-gear" ></i>
+        <h1>
+            <span>Quick Maths</span>
+            <i 
+                class="fa-solid fa-gear" 
+                id="settings-icon" 
+                onclick="toggleSettingsPage()"
+            ></i>
         </h1>
 
         <h3 id="score" >Score</h3>
@@ -96,9 +100,15 @@
             </div>
     
             <div class="customs">
-                <input type="text">
+                <input type="text" id="customOp1Range">
                 <span>to</span>
-                <input type="text">
+                <input type="text" id="customOp2Range">
+                <i 
+                    class="fa-solid fa-toggle-off" 
+                    id="range5"
+                    onclick="setCustomRangeForOperands()"
+                >
+                </i>
             </div>
         </div>
     </div>

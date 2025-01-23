@@ -157,8 +157,8 @@ function resetQuiz() {
     startBtn.innerText = 'Start';
     quizRunning = false;
     display.style.border = 'none';
-    operation = '+';
-    setOperation('+');
+    // operation = '+';
+    // setOperation('+');
 }
 
 function startQuiz() {
@@ -233,9 +233,9 @@ function setCustomRangeForOperands() {
 }
 
 setEventsForToggle(0, [1, 9], [1, 9]);
-setEventsForToggle(1, [1, 90], [1, 9]);
-setEventsForToggle(2, [1, 99], [1, 99]);
-setEventsForToggle(3, [1, 20], [1, 9]);
+setEventsForToggle(1, [10, 90], [1, 9]);
+setEventsForToggle(2, [10, 99], [10, 99]);
+setEventsForToggle(3, [10, 20], [1, 9]);
 document.getElementById("range1").click();
 
 setOperation('+');
